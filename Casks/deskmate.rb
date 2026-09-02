@@ -25,7 +25,9 @@ cask "deskmate" do
   desc "Watches how you work and suggests which parts to automate"
   homepage "https://github.com/Jolie-Ni/DeskMate"
 
-  depends_on macos: ">= :sonoma"
+  # Bare symbol, not ">= :sonoma": a cask's `depends_on macos:` already
+  # defaults to a >= comparator, and the string form is deprecated.
+  depends_on macos: :sonoma
 
   app "DeskMate.app"
 
